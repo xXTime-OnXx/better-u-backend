@@ -47,6 +47,31 @@ You can then execute your native executable with: `./target/better-u-backend-1.0
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
+## Build & Deploy Docker Image to Remote K8s
+Sources:
+- Quarkus Kubernetes Extension: https://quarkus.io/guides/deploying-to-kubernetes
+- Quarkus Container Images: https://quarkus.io/guides/container-image
+
+Build application and generate `kubernetes.yml` config
+```shell script
+./mvnw install
+```
+
+Build docker image
+```shell script
+./mvnw install "-Dquarkus.container-image.build=true"
+```
+
+Push docker image to docker hub
+```shell script
+docker image push tiimonschmid/better-u-backend:latest
+```
+
+Copy generated kubernetes config to server
+```shell script
+scp ./target/kubernetes/kubernetes.yml k8s@5.75.152.45:./namespaces/better-u/kubernetes.yml
+``` 
+
 ## Related Guides
 
 - Kubernetes ([guide](https://quarkus.io/guides/kubernetes)): Generate Kubernetes resources from annotations
