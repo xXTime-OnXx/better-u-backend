@@ -21,13 +21,11 @@ public class GreetingResource {
     @GET
     @Path("/improvements")
     @Produces(MediaType.TEXT_PLAIN)
-    public List<String> getImprovementList(){
+    public List<String> getImprovementList() {
         List<String> improvements = new ArrayList<>();
         improvements.add("Brush teeth");
         improvements.add("Clean kitchen");
         return improvements;
     }
-
-
 
 }
