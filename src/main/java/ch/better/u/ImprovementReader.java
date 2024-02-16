@@ -13,7 +13,7 @@ public class ImprovementReader {
         try {
             // Create an object of filereader
             // class with CSV file as a parameter.
-            FileReader filereader = new FileReader("C:\\Users\\Livio\\Documents\\better-u\\better-u-backend\\src\\main\\java\\ch\\better\\u\\improvements.csv");
+            FileReader filereader = new FileReader("src/main/resources/improvements.csv");
 
             // create csvReader object passing
             // file reader as a parameter

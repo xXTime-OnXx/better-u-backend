@@ -1,5 +1,6 @@
 package ch.better.u;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -16,6 +17,6 @@ class ImprovementReaderTest {
         assertEquals("01", actualValue.get(0).getId());
         assertEquals("brush teeth", actualValue.get(0).getName());
         assertEquals(6, actualValue.get(0).getPoints());
-        assertEquals(true, actualValue.get(0).isDone());
+        assertTrue(actualValue.get(0).isDone());
     }
 }
