@@ -34,6 +34,7 @@ jobs:
           path: target/kubernetes
 
   deploy:
+    needs: build-push
     runs-on: ubuntu-latest
 
     steps:
@@ -42,7 +43,7 @@ jobs:
           name: kubernetes
           path: target/kubernetes
 
-      - uses: actions-hub/kubectl@v1
+      - uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
