@@ -18,7 +18,12 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
-      - name: Build with Maven
+      - name: Build & Push Image
         run: |
           chmod +x mvnw
-          ./mvnw install -DskipITs=false -Dquarkus.container-image.build=true -Dquarkus.container-image.push=true -Dquarkus.container-image.username=${{ secrets.QUARKUS_CONTAINER_IMAGE_USERNAME }} -Dquarkus.container-image.password=${{ secrets.QUARKUS_CONTAINER_IMAGE_PASSWORD }}
+          ./mvnw install \
+            -DskipITs=false \
+            -Dquarkus.container-image.build=true \
+            -Dquarkus.container-image.push=true \
+            -Dquarkus.container-image.username=${{ secrets.QUARKUS_CONTAINER_IMAGE_USERNAME }} \
+            -Dquarkus.container-image.password=${{ secrets.QUARKUS_CONTAINER_IMAGE_PASSWORD }} \
