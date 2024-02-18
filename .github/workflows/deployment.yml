@@ -21,4 +21,4 @@ jobs:
       - name: Build with Maven
         run: |
           chmod +x mvnw
-          ./mvnw install -Dquarkus.container-image.build=true
+          ./mvnw install -Dquarkus.container-image.build=true -DskipITs=false
