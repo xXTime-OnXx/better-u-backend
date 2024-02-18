@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,3 +27,23 @@ jobs:
             -Dquarkus.container-image.push=true \
             -Dquarkus.container-image.username=${{ secrets.QUARKUS_CONTAINER_IMAGE_USERNAME }} \
             -Dquarkus.container-image.password=${{ secrets.QUARKUS_CONTAINER_IMAGE_PASSWORD }} \
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kubernetes
+          path: target/kubernetes
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: kubernetes
+          path: target/kubernetes
+
+      - uses: actions-hub/kubectl@v1
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: kubectl apply -f target/kubernetes.yml
