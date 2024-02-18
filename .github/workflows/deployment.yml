@@ -47,4 +47,4 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
-          args: apply -f target/kubernetes.yml
+          args: apply -f target/kubernetes/kubernetes.yml
