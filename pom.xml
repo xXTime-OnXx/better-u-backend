@@ -43,13 +43,17 @@
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-openapi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
       <artifactId>quarkus-arc</artifactId>
     </dependency>
     <!-- 3rd Party Dependencies -->
     <dependency>
       <groupId>com.opencsv</groupId>
       <artifactId>opencsv</artifactId>
-      <version>4.1</version>
+      <version>5.7.1</version>
     </dependency>
     <!-- Testing Dependencies -->
     <dependency>
