@@ -1,5 +1,6 @@
-package ch.better.u;
+package ch.better.u.domain.usecase;
 
+import ch.better.u.domain.aggregate.Improvement;
 import com.opencsv.CSVReader;
 
 import java.io.FileReader;
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImprovementReader {
+
     public static List<Improvement> readDataLineByLine()
     {
 

@@ -1,4 +1,4 @@
-package ch.better.u;
+package ch.better.u.rest;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 

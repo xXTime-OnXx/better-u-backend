@@ -1,4 +1,4 @@
-package ch.better.u;
+package ch.better.u.domain.aggregate;
 
 public class Improvement {
     private String id;

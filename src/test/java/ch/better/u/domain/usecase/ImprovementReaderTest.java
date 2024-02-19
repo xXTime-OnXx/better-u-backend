@@ -1,6 +1,6 @@
-package ch.better.u;
+package ch.better.u.domain.usecase;
 
-import org.junit.jupiter.api.Disabled;
+import ch.better.u.domain.aggregate.Improvement;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -13,6 +13,7 @@ class ImprovementReaderTest {
     void readDataLineByLine() {
         List<Improvement> actualValue = ImprovementReader.readDataLineByLine();
 
+        assertNotNull(actualValue);
         assertEquals(2, actualValue.size());
         assertEquals("01", actualValue.get(0).getId());
         assertEquals("brush teeth", actualValue.get(0).getName());

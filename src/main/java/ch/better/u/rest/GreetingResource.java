@@ -1,4 +1,4 @@
-package ch.better.u;
+package ch.better.u.rest;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
