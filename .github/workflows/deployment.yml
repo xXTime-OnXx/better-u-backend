@@ -28,7 +28,7 @@ jobs:
             -Dquarkus.container-image.username=${{ secrets.QUARKUS_CONTAINER_IMAGE_USERNAME }} \
             -Dquarkus.container-image.password=${{ secrets.QUARKUS_CONTAINER_IMAGE_PASSWORD }} \
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: kubernetes
           path: target/kubernetes
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: kubernetes
           path: target/kubernetes
